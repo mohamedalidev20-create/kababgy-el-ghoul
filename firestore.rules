@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /orders/{orderId} {
+      // يسمح للزائر بإرسال طلب جديد فقط. لا يسمح له بقراءة الطلبات أو تعديلها.
+      allow create: if
+        request.resource.data.keys().hasAll(['customer','items','total','status','createdAt']) &&
+        request.resource.data.customer is map &&
+        request.resource.data.customer.keys().hasAll(['name','phone','address']) &&
+        request.resource.data.customer.name is string &&
+        request.resource.data.customer.name.size() >= 2 &&
+        request.resource.data.customer.phone is string &&
+        request.resource.data.customer.address is string &&
+        request.resource.data.items is list &&
+        request.resource.data.items.size() > 0 &&
+        request.resource.data.items.size() <= 30 &&
+        request.resource.data.total is number &&
+        request.resource.data.total >= 0 &&
+        request.resource.data.status == 'جديد';
+
+      // أنشئ حساب الإدارة بنفسك من Firebase Authentication.
+      // لا تفعّل التسجيل العام للمستخدمين.
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}

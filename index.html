@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#11100e">
+  <meta name="description" content="كبابجي الغول - مشويات وأكلات شرقية. اطلب أونلاين بسهولة.">
+  <title>كبابجي الغول | الطعم الأصيل</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline">كبابجي الغول <span>•</span> الطعم الأصيل من أول لقمة</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="الرئيسية">
+      <span class="brand-mark">الغول</span>
+      <span><b>كبابجي الغول</b><small>مشويات • شرقي • طازة</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">☰</button>
+    <nav id="mainNav">
+      <a href="#home">الرئيسية</a><a href="#menu">المنيو</a><a href="#about">عن المطعم</a><a href="#contact">تواصل معنا</a>
+    </nav>
+    <button class="cart-open" id="cartOpen">السلة <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="eyebrow">أهلاً بيك في كبابجي الغول</div>
+        <h1>الطعم اللي<br><em>يستاهل التجربة</em></h1>
+        <p>مشويات متظبطة، مكونات طازة، وطعم شرقي أصيل. اختار أكلك واطلبه لحد عندك.</p>
+        <div class="hero-actions"><a class="btn primary" href="#menu">اطلب دلوقتي</a><a class="btn ghost" href="#about">اعرف حكايتنا</a></div>
+        <div class="hero-points"><span>✦ جودة وطعم</span><span>✦ تجهيز طازة</span><span>✦ خدمة مميزة</span></div>
+      </div>
+      <div class="hero-stamp"><b>طازة</b><span>كل يوم</span></div>
+    </section>
+
+    <section class="trust-strip">
+      <div><b>مشويات شرقية</b><small>على أصولها</small></div><div><b>اختيارات كتير</b><small>لكل الأذواق</small></div><div><b>اطلب بسهولة</b><small>من موبايلك</small></div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="section-heading"><div><span class="eyebrow">اختار اللي بتحبه</span><h2>منيو <em>الغول</em></h2></div><p>كل اللي نفسك فيه في مكان واحد</p></div>
+      <div class="menu-tools"><div class="categories" id="categories"></div><input id="searchInput" type="search" placeholder="دوّر على أكلة بتحبها..."></div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <section class="feature-banner">
+      <div><span class="eyebrow">لمة حلوة تستاهل أكلة حلوة</span><h2>جمع صحابك...<br><em>والغول علينا!</em></h2><p>اختار وجباتك المفضلة من المنيو واطلبها بسهولة.</p><a class="btn primary" href="#menu">شوف المنيو</a></div>
+      <div class="feature-image"></div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-photo"></div><div class="about-copy"><span class="eyebrow">حكايتنا</span><h2>الطعم الأصيل<br><em>في كل تفصيلة</em></h2><p>في كبابجي الغول بنهتم إن كل وجبة توصلك بطعم يفرّحك. اختيارات متنوعة من المشويات والأكلات الشرقية، وتحضير نهتم فيه بالتفاصيل.</p><div class="about-stats"><div><b>طعم أصيل</b><small>وصفات شرقية</small></div><div><b>اختيارات متنوعة</b><small>منيو لكل الأذواق</small></div></div></div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading"><div><span class="eyebrow">مستنيين طلبك</span><h2>تواصل <em>معانا</em></h2></div></div>
+      <div class="contact-grid">
+        <div class="contact-card"><span>⌖</span><h3>العنوان</h3><p>مدينة بدر – يُرجى تأكيد العنوان التفصيلي مع المطعم</p></div>
+        <div class="contact-card"><span>☎</span><h3>اتصل بينا</h3><p>01111472711<br>01119099222<br>01005020412</p></div>
+        <div class="contact-card"><span>◷</span><h3>مواعيد العمل</h3><p>تواصل مع المطعم لمعرفة مواعيد العمل الحالية.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">الغول</span><span><b>كبابجي الغول</b><small>الطعم الأصيل</small></span></a><p>© <span id="year"></span> كبابجي الغول. جميع الحقوق محفوظة.</p><a href="#home">العودة للأعلى ↑</a></footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="سلة المشتريات">
+    <div class="drawer-head"><div><span class="eyebrow">طلبك</span><h2>سلة المشتريات</h2></div><button id="cartClose" class="icon-btn">✕</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-total"><span>الإجمالي</span><b id="cartTotal">0 جنيه</b></div>
+    <button class="btn primary full" id="checkoutOpen">إكمال الطلب</button>
+    <p class="tiny-note">قد تُضاف رسوم التوصيل حسب المنطقة، وسيتم تأكيدها مع المطعم.</p>
+  </aside>
+
+  <div class="modal-backdrop" id="checkoutBackdrop">
+    <section class="checkout-modal">
+      <div class="drawer-head"><div><span class="eyebrow">خطوة أخيرة</span><h2>بيانات التوصيل</h2></div><button id="checkoutClose" class="icon-btn">✕</button></div>
+      <form id="checkoutForm">
+        <label>الاسم<input name="name" required minlength="2" placeholder="اسمك بالكامل"></label>
+        <label>رقم الموبايل<input name="phone" required inputmode="tel" pattern="[0-9+٠-٩ ]{8,}" placeholder="01xxxxxxxxx"></label>
+        <label>العنوان بالتفصيل<textarea name="address" required minlength="5" placeholder="المنطقة، الشارع، رقم العمارة والشقة"></textarea></label>
+        <label>ملاحظات للطلب <small>(اختياري)</small><textarea name="notes" placeholder="مثلاً: من غير شطة..."></textarea></label>
+        <div class="payment-note">الدفع عند الاستلام – يتم تأكيد الطلب هاتفيًا من المطعم.</div>
+        <button class="btn primary full" type="submit">تأكيد الطلب</button>
+        <p id="checkoutMessage" class="form-message"></p>
+      </form>
+    </section>
+  </div>
+
+  <section id="adminPanel" class="admin-panel" hidden>
+    <div class="admin-top"><div><span class="eyebrow">إدارة المطعم</span><h1>طلبات كبابجي الغول</h1></div><button class="btn ghost" id="adminLogout">تسجيل الخروج</button></div>
+    <div id="adminLoginBox" class="admin-login"><h2>دخول الإدارة</h2><form id="adminLoginForm"><label>البريد الإلكتروني<input name="email" type="email" required></label><label>كلمة المرور<input name="password" type="password" required></label><button class="btn primary full">دخول</button><p id="adminLoginMessage"></p></form></div>
+    <div id="adminOrders" hidden><div class="admin-summary" id="adminSummary"></div><div class="admin-order-list" id="adminOrderList"></div></div>
+  </section>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
