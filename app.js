@@ -11,23 +11,20 @@ function renderCategories(){
  $("#categories").querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{activeCategory=b.dataset.cat;renderCategories();renderMenu()});
 }
 function foodPhotoUrl(item,index){
- // صور ثابتة من Unsplash بدل خدمة الصور العشوائية التي كانت تفشل أحياناً.
- const photos={
-  "الوجبات":["photo-1544025162-d76694265947","photo-1558030006-450675393462","photo-1547592180-85f173990554"],
-  "المشويات":["photo-1558030006-450675393462","photo-1544025162-d76694265947","photo-1529692236671-f1f6cf9683ba"],
-  "السمين":["photo-1547592180-85f173990554","photo-1547592166-23ac45744acd"],
-  "الأطباق الرئيسية":["photo-1547592180-85f173990554","photo-1547592166-23ac45744acd","photo-1515003197210-e0cd7184f8b5"],
-  "الطواجن":["photo-1547592180-85f173990554","photo-1547592166-23ac45744acd"],
-  "السندوتشات":["photo-1553909489-cd47e0ef937f","photo-1568901346375-23c9450c58cd","photo-1528735602780-2552fd46c7af"],
-  "المقبلات":["photo-1512621776951-a57141f2eefd","photo-1547592180-85f173990554"],
-  "الأرز والمكرونات":["photo- pasta","photo-1473093295043-cdd812d0e601","photo-1551183053-bf91a1d81141"],
-  "الكريبات":["photo-1513104890138-7c749659a591","photo-1565299624946-b28f40a0ae38"],
-  "البروستد":["photo-1626082927389-6cd097cdc6ec","photo-1562967914-608f82629710","photo-1569691899455-5dc7a9e6a9b7"]
- };
- const list=photos[item.category]||photos["الوجبات"];
- let id=list[index%list.length];
- if(id==="photo- pasta") id="photo-1473093295043-cdd812d0e601";
- return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=720&q=80`;
+ // اختيار كلمات بحث مختلفة حسب اسم الصنف، بدل صورة عامة واحدة للقسم.
+ const n=item.name.replace(/^وجبة\s*/,"").toLowerCase();
+ const rules=[
+  [/كباب|كندوز/,"beef,kebab,grilled"], [/كفتة|كفته/,"kofta,grilled,minced-meat"], [/شيش|طاووق|فراخ|فرخة|وراك|صدر|دجاج/,"chicken,shish-tawook,grilled"],
+  [/طرب/ ,"grilled,lamb,caul-fat"], [/سجق/ ,"sausage,grilled"], [/حواوشي/ ,"hawawshi,meat"], [/برجر|برغر/ ,"burger,beef"], [/كبدة/ ,"liver,sandwich"],
+  [/سمين|كرشة|ممبار|فشة|طحال|لحمة راس/ ,"egyptian,offal,stew"], [/طاجن|بامية|ملوخية|فتة|ورق عنب/ ,"egyptian,tagine,stew"],
+  [/أرز|رز|مكرونة|مكرونه|اسباجتي|سباجيتي/ ,"rice,pasta,egyptian"], [/كريب/ ,"savory,crepe,stuffed"], [/بروستد|بانيه|استربس|ناجتس/ ,"fried,chicken,crispy"],
+  [/بطاطس|سلطة|طحينة|بابا|مخلل|ثومية|حمص/ ,"mezze,appetizer,side-dish"], [/جبنة|جبن/ ,"cheese,sandwich"], [/ميكس|مشكل/ ,"mixed,grill,meat"],
+  [/ساندوتش|سندوتش|رغيف|عيش/ ,"egyptian,sandwich,street-food"]
+ ];
+ let specific=rules.find(([re])=>re.test(n));
+ const categoryTags={"الوجبات":"egyptian,grill,meal","المشويات":"grilled,bbq,meat","السمين":"egyptian,offal,stew","الأطباق الرئيسية":"egyptian,main-course","الطواجن":"egyptian,tagine,stew","السندوتشات":"sandwich,street-food","المقبلات":"mezze,appetizer","الأرز والمكرونات":"rice,pasta","الكريبات":"savory,crepe","البروستد":"fried,chicken"};
+ const tags=specific?specific[1]:(categoryTags[item.category]||"egyptian,food");
+ return `https://loremflickr.com/720/480/${tags}?lock=${index+401}`;
 }
 function renderMenu(){
  const term=$("#searchInput").value.trim().toLowerCase();
