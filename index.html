@@ -1,42 +1,381 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#15110d">
 <meta name="description" content="كبابجي الغول - منيو كامل للمشويات والأكلات الشرقية.">
 <title>كبابجي الغول | الطعم الأصيل</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* Developer Portfolio Section */
+.developer-section {
+    position: relative;
+    overflow: hidden;
+    margin: 80px auto;
+    width: min(1100px, 90%);
+    min-height: 320px;
+    padding: 55px 7%;
+    background: linear-gradient(120deg, #211810, #100d0a);
+    border: 1px solid rgba(201,157,91,.3);
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.developer-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.developer-label {
+    color: #c99d5b;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.developer-content h2 {
+    font-size: clamp(27px,4vw,42px);
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.developer-content h2 em {
+    color: #d5a45e;
+    font-style: normal;
+}
+
+.developer-content p {
+    color: #c8bfb5;
+    line-height: 2;
+    font-size: 15px;
+    max-width: 480px;
+}
+
+.developer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 13px 27px;
+    background: #c99d5b;
+    color: #17110b;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.developer-btn:hover {
+    background: #edc17d;
+    transform: translateY(-4px);
+}
+
+.developer-btn span {
+    font-size: 20px;
+}
+
+.developer-signature {
+    margin-top: 35px;
+    color: #81766b;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.developer-signature strong {
+    color: #d5a45e;
+    margin-right: 5px;
+}
+
+.developer-decoration {
+    position: relative;
+    width: 250px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.developer-decoration > span {
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(213,164,94,.8);
+    z-index: 2;
+}
+
+.decoration-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(213,164,94,.25);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(213,164,94,.08);
+}
+
+@media(max-width:650px) {
+    .developer-section {
+        padding: 40px 25px;
+        margin: 50px auto;
+    }
+
+    .developer-decoration {
+        display: none;
+    }
+
+    .developer-content h2 {
+        font-size: 29px;
+    }
+}
+</style>
 </head>
+
 <body>
+
 <div class="topline">كبابجي الغول <span>✦</span> الطعم الأصيل من أول لقمة</div>
+
 <header class="site-header">
-<a class="brand" href="#home"><span class="brand-mark">الغول</span><span><b>كبابجي الغول</b><small>مشويات • شرقي • طازة</small></span></a>
+<a class="brand" href="#home">
+<span class="brand-mark">الغول</span>
+<span><b>كبابجي الغول</b><small>مشويات • شرقي • طازة</small></span>
+</a>
+
 <button class="menu-toggle" id="menuToggle">☰</button>
-<nav id="mainNav"><a href="#home">الرئيسية</a><a href="#menu">المنيو الكامل</a><a href="#about">عن المطعم</a><a href="#contact">تواصل معنا</a></nav>
+
+<nav id="mainNav">
+<a href="#home">الرئيسية</a>
+<a href="#menu">المنيو الكامل</a>
+<a href="#about">عن المطعم</a>
+<a href="#contact">تواصل معنا</a>
+</nav>
+
 <button class="cart-open" id="cartOpen">السلة <span id="cartCount">0</span></button>
 </header>
+
 <main>
-<section class="hero" id="home"><div class="hero-shade"></div><div class="hero-content">
-<div class="eyebrow">أهلاً بيك في كبابجي الغول</div><h1>أصل المشويات<br><em>على أصولها</em></h1>
+
+<section class="hero" id="home">
+<div class="hero-shade"></div>
+<div class="hero-content">
+<div class="eyebrow">أهلاً بيك في كبابجي الغول</div>
+<h1>أصل المشويات<br><em>على أصولها</em></h1>
 <p>من أول سيخ مشويات لحد أحلى طاجن… اختار من المنيو الكامل واطلب بسهولة.</p>
-<div class="hero-actions"><a class="btn primary" href="#menu">اكتشف المنيو</a><a class="btn ghost" href="https://wa.me/201111472711" target="_blank" rel="noopener">اطلب واتساب</a></div>
-<div class="hero-points"><span>✦ اختيارات متنوعة</span><span>✦ أسعار واضحة</span><span>✦ طلب سهل</span></div></div><div class="hero-stamp"><b>الغول</b><span>الطعم الأصيل</span></div></section>
-<section class="trust-strip"><div><b>مشويات شرقية</b><small>على أصولها</small></div><div><b>10 أقسام</b><small>منيو كامل</small></div><div><b>اطلب بسهولة</b><small>من موبايلك</small></div></section>
-<section class="section menu-section" id="menu"><div class="section-heading"><div><span class="eyebrow">كل الأصناف والأسعار</span><h2>منيو <em>الغول</em></h2></div><p>اختار القسم أو ابحث عن أكلك المفضل</p></div>
-<div class="menu-tools"><div class="categories" id="categories"></div><input id="searchInput" type="search" placeholder="دوّر على أكلة بتحبها..."></div><div class="menu-grid" id="menuGrid"></div></section>
-<section class="feature-banner"><div><span class="eyebrow">لمة حلوة تستاهل أكلة حلوة</span><h2>جمع صحابك...<br><em>والغول يفرحك</em></h2><p>اطلب اختياراتك من المنيو الكامل، وراجع طلبك في السلة قبل الإرسال.</p><a class="btn primary" href="#menu">شوف المنيو</a></div><div class="feature-image"></div></section>
-<section class="section about-section" id="about"><div class="about-photo"></div><div class="about-copy"><span class="eyebrow">حكايتنا</span><h2>الطعم الأصيل<br><em>في كل تفصيلة</em></h2><p>في كبابجي الغول هتلاقي تشكيلة من المشويات والأكلات الشرقية والطواجن والسندوتشات، وكل اللي نفسك فيه في منيو واحد.</p></div></section>
-<section class="section contact-section" id="contact"><div class="section-heading"><div><span class="eyebrow">مستنيين طلبك</span><h2>تواصل <em>معانا</em></h2></div></div><div class="contact-grid">
-<div class="contact-card"><span>⌖</span><h3>موقع المطعم</h3><p>افتح موقعنا على خرائط جوجل للوصول للمطعم.</p><a class="btn ghost" href="https://maps.app.goo.gl/WKArDo4RCFMTL5UQ8" target="_blank" rel="noopener">افتح الخريطة</a></div>
-<div class="contact-card"><span>☎</span><h3>اتصل بينا</h3><p>01111472711</p><a class="btn ghost" href="tel:+201111472711">اتصل الآن</a></div>
-<div class="contact-card"><span>✉</span><h3>اطلب واتساب</h3><p>ابعت طلبك للمطعم برسالة واتساب جاهزة.</p><a class="btn primary" href="https://wa.me/201111472711" target="_blank" rel="noopener">افتح واتساب</a></div>
-</div></section></main>
-<footer><a class="brand footer-brand" href="#home"><span class="brand-mark">الغول</span><span><b>كبابجي الغول</b><small>الطعم الأصيل</small></span></a><p>© <span id="year"></span> كبابجي الغول. جميع الحقوق محفوظة.</p><a href="#home">العودة للأعلى ↑</a></footer>
-<div class="drawer-backdrop" id="drawerBackdrop"></div><aside class="cart-drawer" id="cartDrawer"><div class="drawer-head"><div><span class="eyebrow">طلبك</span><h2>سلة المشتريات</h2></div><button id="cartClose" class="icon-btn">✕</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><span>الإجمالي</span><b id="cartTotal">0 جنيه</b></div><button class="btn primary full" id="checkoutOpen">إكمال الطلب</button><p class="tiny-note">رسوم التوصيل – إن وجدت – يتم تأكيدها مع المطعم.</p></aside>
-<div class="modal-backdrop" id="checkoutBackdrop"><section class="checkout-modal"><div class="drawer-head"><div><span class="eyebrow">خطوة أخيرة</span><h2>بيانات الطلب</h2></div><button id="checkoutClose" class="icon-btn">✕</button></div><form id="checkoutForm">
-<label>الاسم<input name="name" required minlength="2" placeholder="اسمك بالكامل"></label><label>رقم الموبايل<input name="phone" required inputmode="tel" placeholder="01xxxxxxxxx"></label><label>العنوان بالتفصيل<textarea name="address" required minlength="5" placeholder="المنطقة، الشارع، رقم العمارة والشقة"></textarea></label><label>ملاحظات للطلب <small>(اختياري)</small><textarea name="notes" placeholder="مثلاً: من غير شطة..."></textarea></label>
-<div class="payment-note">بعد الضغط على إرسال الطلب هيفتح واتساب برسالة فيها تفاصيل طلبك. راجع الرسالة واضغط إرسال داخل واتساب لتأكيد وصولها للمطعم.</div><button class="btn primary full" type="submit">إرسال الطلب على واتساب</button><p id="checkoutMessage" class="form-message"></p></form></section></div>
-<div class="toast" id="toast" role="status"></div><script type="module" src="app.js"></script>
-</body></html>
+
+<div class="hero-actions">
+<a class="btn primary" href="#menu">اكتشف المنيو</a>
+<a class="btn ghost" href="https://wa.me/201111472711" target="_blank" rel="noopener">اطلب واتساب</a>
+</div>
+
+<div class="hero-points">
+<span>✦ اختيارات متنوعة</span>
+<span>✦ أسعار واضحة</span>
+<span>✦ طلب سهل</span>
+</div>
+</div>
+
+<div class="hero-stamp">
+<b>الغول</b>
+<span>الطعم الأصيل</span>
+</div>
+</section>
+
+<section class="trust-strip">
+<div><b>مشويات شرقية</b><small>على أصولها</small></div>
+<div><b>10 أقسام</b><small>منيو كامل</small></div>
+<div><b>اطلب بسهولة</b><small>من موبايلك</small></div>
+</section>
+
+<section class="section menu-section" id="menu">
+<div class="section-heading">
+<div>
+<span class="eyebrow">كل الأصناف والأسعار</span>
+<h2>منيو <em>الغول</em></h2>
+</div>
+<p>اختار القسم أو ابحث عن أكلك المفضل</p>
+</div>
+
+<div class="menu-tools">
+<div class="categories" id="categories"></div>
+<input id="searchInput" type="search" placeholder="دوّر على أكلة بتحبها...">
+</div>
+
+<div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<section class="feature-banner">
+<div>
+<span class="eyebrow">لمة حلوة تستاهل أكلة حلوة</span>
+<h2>جمع صحابك...<br><em>والغول يفرحك</em></h2>
+<p>اطلب اختياراتك من المنيو الكامل، وراجع طلبك في السلة قبل الإرسال.</p>
+<a class="btn primary" href="#menu">شوف المنيو</a>
+</div>
+<div class="feature-image"></div>
+</section>
+
+<section class="section about-section" id="about">
+<div class="about-photo"></div>
+<div class="about-copy">
+<span class="eyebrow">حكايتنا</span>
+<h2>الطعم الأصيل<br><em>في كل تفصيلة</em></h2>
+<p>في كبابجي الغول هتلاقي تشكيلة من المشويات والأكلات الشرقية والطواجن والسندوتشات، وكل اللي نفسك فيه في منيو واحد.</p>
+</div>
+</section>
+
+<!-- Mohamed Ali Developer Advertisement -->
+<section class="developer-section" id="developer">
+
+<div class="developer-content">
+
+<span class="developer-label">DIGITAL EXPERIENCE</span>
+
+<h2>
+موقعك الإلكتروني القادم<br>
+<em>يبدأ من هنا</em>
+</h2>
+
+<p>
+تم تصميم وتطوير هذا الموقع بواسطة Mohamed Ali،
+متخصص في تصميم وتطوير المواقع الإلكترونية
+للأعمال والمطاعم.
+</p>
+
+<a href="https://bio.site/mohamedali1"
+target="_blank"
+rel="noopener"
+class="developer-btn">
+اكتشف أعمالي <span>↗</span>
+</a>
+
+<div class="developer-signature">
+DESIGNED & DEVELOPED BY
+<strong>MOHAMED ALI</strong>
+</div>
+
+</div>
+
+<div class="developer-decoration">
+<span>&lt;/&gt;</span>
+<div class="decoration-circle"></div>
+</div>
+
+</section>
+<!-- End Developer Advertisement -->
+
+<section class="section contact-section" id="contact">
+
+<div class="section-heading">
+<div>
+<span class="eyebrow">مستنيين طلبك</span>
+<h2>تواصل <em>معانا</em></h2>
+</div>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<span>⌖</span>
+<h3>موقع المطعم</h3>
+<p>افتح موقعنا على خرائط جوجل للوصول للمطعم.</p>
+<a class="btn ghost" href="https://maps.app.goo.gl/WKArDo4RCFMTL5UQ8" target="_blank" rel="noopener">افتح الخريطة</a>
+</div>
+
+<div class="contact-card">
+<span>☎</span>
+<h3>اتصل بينا</h3>
+<p>01111472711</p>
+<a class="btn ghost" href="tel:+201111472711">اتصل الآن</a>
+</div>
+
+<div class="contact-card">
+<span>✉</span>
+<h3>اطلب واتساب</h3>
+<p>ابعت طلبك للمطعم برسالة واتساب جاهزة.</p>
+<a class="btn primary" href="https://wa.me/201111472711" target="_blank" rel="noopener">افتح واتساب</a>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<a class="brand footer-brand" href="#home">
+<span class="brand-mark">الغول</span>
+<span><b>كبابجي الغول</b><small>الطعم الأصيل</small></span>
+</a>
+
+<p>© <span id="year"></span> كبابجي الغول. جميع الحقوق محفوظة.</p>
+<a href="#home">العودة للأعلى ↑</a>
+</footer>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+<div class="drawer-head">
+<div><span class="eyebrow">طلبك</span><h2>سلة المشتريات</h2></div>
+<button id="cartClose" class="icon-btn">✕</button>
+</div>
+
+<div class="cart-items" id="cartItems"></div>
+
+<div class="cart-total">
+<span>الإجمالي</span>
+<b id="cartTotal">0 جنيه</b>
+</div>
+
+<button class="btn primary full" id="checkoutOpen">إكمال الطلب</button>
+<p class="tiny-note">رسوم التوصيل – إن وجدت – يتم تأكيدها مع المطعم.</p>
+</aside>
+
+<div class="modal-backdrop" id="checkoutBackdrop">
+<section class="checkout-modal">
+
+<div class="drawer-head">
+<div><span class="eyebrow">خطوة أخيرة</span><h2>بيانات الطلب</h2></div>
+<button id="checkoutClose" class="icon-btn">✕</button>
+</div>
+
+<form id="checkoutForm">
+
+<label>الاسم
+<input name="name" required minlength="2" placeholder="اسمك بالكامل">
+</label>
+
+<label>رقم الموبايل
+<input name="phone" required inputmode="tel" placeholder="01xxxxxxxxx">
+</label>
+
+<label>العنوان بالتفصيل
+<textarea name="address" required minlength="5" placeholder="المنطقة، الشارع، رقم العمارة والشقة"></textarea>
+</label>
+
+<label>ملاحظات للطلب <small>(اختياري)</small>
+<textarea name="notes" placeholder="مثلاً: من غير شطة..."></textarea>
+</label>
+
+<div class="payment-note">
+بعد الضغط على إرسال الطلب هيفتح واتساب برسالة فيها تفاصيل طلبك. راجع الرسالة واضغط إرسال داخل واتساب لتأكيد وصولها للمطعم.
+</div>
+
+<button class="btn primary full" type="submit">إرسال الطلب على واتساب</button>
+<p id="checkoutMessage" class="form-message"></p>
+
+</form>
+</section>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
